@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="Objects">
+    <property name="title">
+     <string>Объекты</string>
+    </property>
+    <addaction name="AddGenerator"/>
+    <addaction name="AddBpsk_m"/>
+    <addaction name="actionBpsk_demodulator"/>
+    <addaction name="actionConv_coder"/>
+    <addaction name="actionConv_decoder"/>
+    <addaction name="actionGolay_coder"/>
+    <addaction name="actionGolay_decoder"/>
+    <addaction name="actionNoise"/>
+    <addaction name="actionReceiver"/>
+   </widget>
+   <widget class="QMenu" name="File">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="Save"/>
+    <addaction name="Exit"/>
+   </widget>
+   <widget class="QMenu" name="Operation">
+    <property name="title">
+     <string>Операции</string>
+    </property>
+    <addaction name="Start"/>
+    <addaction name="EraseItems"/>
+    <addaction name="repeater"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Графики</string>
+    </property>
+    <addaction name="showGraph"/>
+   </widget>
+   <addaction name="File"/>
+   <addaction name="Objects"/>
+   <addaction name="Operation"/>
+   <addaction name="menu"/>
+  </widget>
+  <action name="action_list">
+   <property name="text">
+    <string>объекты -&gt; list</string>
+   </property>
+  </action>
+  <action name="AddBpsk_m">
+   <property name="text">
+    <string>bpsk modulator</string>
+   </property>
+  </action>
+  <action name="AddGenerator">
+   <property name="text">
+    <string>generator</string>
+   </property>
+  </action>
+  <action name="Exit">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="Start">
+   <property name="text">
+    <string>Запуск</string>
+   </property>
+  </action>
+  <action name="actionBpsk_demodulator">
+   <property name="text">
+    <string>bpsk demodulator</string>
+   </property>
+  </action>
+  <action name="actionConv_coder">
+   <property name="text">
+    <string>conv coder</string>
+   </property>
+  </action>
+  <action name="actionConv_decoder">
+   <property name="text">
+    <string>conv decoder</string>
+   </property>
+  </action>
+  <action name="actionGolay_coder">
+   <property name="text">
+    <string>golay coder</string>
+   </property>
+  </action>
+  <action name="actionGolay_decoder">
+   <property name="text">
+    <string>golay decoder</string>
+   </property>
+  </action>
+  <action name="actionNoise">
+   <property name="text">
+    <string>noise</string>
+   </property>
+  </action>
+  <action name="EraseItems">
+   <property name="text">
+    <string>Очистить</string>
+   </property>
+  </action>
+  <action name="Save">
+   <property name="text">
+    <string>Сохранить лог</string>
+   </property>
+  </action>
+  <action name="actionReceiver">
+   <property name="text">
+    <string>receiver</string>
+   </property>
+  </action>
+  <action name="showGraph">
+   <property name="text">
+    <string>Показать</string>
+   </property>
+  </action>
+  <action name="repeater">
+   <property name="text">
+    <string>Запустить N раз</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>AddBpsk_m</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_bpsk_m()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_list</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AddGenerator</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_gen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Exit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>myClose()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Start</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBpsk_demodulator</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_bpsk_d()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionConv_coder</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_conv_c()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionConv_decoder</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_conv_d()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGolay_coder</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_golay_c()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGolay_decoder</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_golay_d()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNoise</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_noise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>EraseItems</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>eraseAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Save</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionReceiver</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add_res()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showGraph</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showGraph()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>repeater</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Repeater()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>add_part()</slot>
+  <slot>check()</slot>
+  <slot>add_bpsk_m()</slot>
+  <slot>add_gen()</slot>
+  <slot>myClose()</slot>
+  <slot>getStart()</slot>
+  <slot>add_bpsk_d()</slot>
+  <slot>add_conv_c()</slot>
+  <slot>add_conv_d()</slot>
+  <slot>add_golay_c()</slot>
+  <slot>add_golay_d()</slot>
+  <slot>add_noise()</slot>
+  <slot>eraseAll()</slot>
+  <slot>save()</slot>
+  <slot>add_res()</slot>
+  <slot>showGraph()</slot>
+  <slot>Repeater()</slot>
+ </slots>
+</ui>
